@@ -1,5 +1,5 @@
 {
-  "homepage": "https://kaushalsahu07.github.io/portfolio/",
+  "homepage": "https://portfolio-livid-zeta-92.vercel.app/",
   "name": "portfolio",
   "private": true,
   "version": "0.0.0",
@@ -8,9 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
