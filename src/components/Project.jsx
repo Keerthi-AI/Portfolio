@@ -9,8 +9,8 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Project1 from '../assets/project-1.png'; 
 import Project2 from '../assets/images.png';
 import Project3 from '../assets/aa.jpg';
-import Project4 from '../assets/project-4.png';
-import Project5 from '../assets/project-5.png';
+import Project4 from '../assets/images.jpg';
+import Project5 from '../assets/medconnect.jpg';
 import Project6 from '../assets/faircart.png';
 
 function Project() {
