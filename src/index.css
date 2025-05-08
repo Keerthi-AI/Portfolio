@@ -1,0 +1,427 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@plugin 'tailwindcss-animate';
+
+@custom-variant dark (&:is(.dark *));
+@import "tailwindcss";
+
+:root{
+  --color-bg: #0D1117;
+  --color-second: #111927;
+  --color-main: #0395FF;
+  --color-main-sh: 1px 1px 15px #003352;
+
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+/* Base Styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--color-bg);
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* Container for the entire site */
+.full-width-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Adjust each section to utilize full width */
+section {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* Content containers within sections */
+section > div {
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 2rem;
+}
+
+/* Maintain the Navbar at full width */
+.nav {
+  width: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* Update section specific styles */
+#home, #about, #projects, #contact {
+  position: relative;
+  width: 100%;
+}
+
+/* Enhanced Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Enhanced Button Styles */
+.btn-primary {
+  background: linear-gradient(90deg, #4f46e5, #8b5cf6);
+  box-shadow: 0 4px 20px rgba(79, 70, 229, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 6px 25px rgba(79, 70, 229, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: rgba(17, 25, 39, 0.8);
+  border: 1px solid rgba(79, 70, 229, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  border-color: rgba(79, 70, 229, 0.6);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Animation Classes */
+.text-gradient-animate {
+  background: linear-gradient(-45deg, #6366f1, #8b5cf6, #ec4899, #3b82f6);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-bg 6s ease infinite;
+}
+
+@keyframes gradient-bg {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Grid background */
+.grid-bg {
+  background-image: 
+    linear-gradient(to right, rgba(79, 70, 229, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(79, 70, 229, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Glow animation */
+@keyframes glow {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.4; }
+}
+
+.animate-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+/* Enhanced Card Styles */
+.card {
+  background-color: var(--color-second);
+  border-radius: 12px;
+  border: 1px solid rgba(87, 111, 160, 0.3);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Project Card Hover Effects */
+.project-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(13, 17, 23, 0), rgba(13, 17, 23, 0.8));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+/* Enhanced Image Styles */
+.img-hover-zoom {
+  overflow: hidden;
+}
+
+.img-hover-zoom img {
+  transition: transform 0.5s ease;
+}
+
+.img-hover-zoom:hover img {
+  transform: scale(1.1);
+}
+
+/* Scroll Behavior */
+html {
+  scroll-padding-top: 80px; /* Adjust based on navbar height */
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-second);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-main);
+}
+
+/* Focus Styles */
+*:focus {
+  outline: 2px solid var(--color-main);
+  outline-offset: 2px;
+}
+
+/* Diagonal lines background */
+.diagonal-lines {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.05) 1px,
+    transparent 1px,
+    transparent 10px
+  );
+}
+
+/* Radial gradient background */
+.bg-gradient-radial {
+  background-image: radial-gradient(circle at center, var(--from), var(--via), var(--to));
+}
+
+/* Enhanced Social Icon Styles */
+.social-icon {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgba(254, 226, 167, 0.8);
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  color: var(--color-main);
+  filter: drop-shadow(0 0 8px rgba(79, 70, 229, 0.4));
+  transform: translateY(-5px);
+}
+
+.social-label {
+  position: absolute;
+  top: 100%;
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover .social-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Enhanced Form Styles */
+input, textarea, select {
+  background-color: rgba(13, 17, 23, 0.5);
+  border: 1px solid rgba(87, 111, 160, 0.3);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--color-main);
+  box-shadow: 0 0 0 2px rgba(3, 149, 255, 0.2);
+  outline: none;
+}
+
+/* Helper Classes */
+.text-shadow {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.backdrop-blur {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.glass-effect {
+  background: rgba(17, 25, 39, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Line clamp utilities */
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  section > div {
+    padding: 0 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  section > div {
+    padding: 0 1rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .card {
+    padding: 1rem;
+  }
+  
+  .btn-primary, .btn-secondary {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Dark mode adjustments */
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+}
